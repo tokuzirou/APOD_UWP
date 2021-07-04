@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="APOD_UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:APOD_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <CalendarDatePicker x:Name="MonthCalender" Margin="94,73,0,0" VerticalAlignment="Top" Height="56" Width="272"/>
+        <Button x:Name="LaunchButton" Content="APOD の開始日に移動" Margin="94,195,1134,0" VerticalAlignment="Top" Height="42" HorizontalAlignment="Stretch" Click="LaunchButton_Click"/>
+        <ListView Margin="94,273,997,500">
+            <CheckBox x:Name="ShowTodaysImageCheckBox" Content="起動時に今日の画像を表示する&#xD;&#xA;" Height="60" Width="392"/>
+            <CheckBox x:Name="LimitRangeChackBox" Content="範囲を今年に制限する&#xD;&#xA;" Height="60" Width="392"/>
+            <TextBlock TextWrapping="Wrap" Height="50" Width="215"><Run Text="今日ダウンロードした画像の数:"/><LineBreak/><Run/></TextBlock>
+            <TextBox x:Name="ImageTodaysTextBox" Text="&#xD;&#xA;" TextWrapping="Wrap" Height="26" IsReadOnly="True" Background="#FFFFFFC0" Width="126"/>
+
+        </ListView>
+        <TextBlock HorizontalAlignment="Left" Margin="94,540,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="215"><Run Text="画像のクレジットと著作権の表記:"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="ImageCopyrightTextBox" HorizontalAlignment="Left" Margin="94,582,0,0" Text="&#xD;&#xA;" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="136"/>
+        <TextBox x:Name="DescriptionTextBox" HorizontalAlignment="Left" Margin="94,680,0,0" Text="説明:&#xD;&#xA;" TextWrapping="Wrap" VerticalAlignment="Top" Height="185" Width="1300"/>
+        <Border x:Name="PictureBorder" BorderThickness="1" BorderBrush="Black" Margin="567,73,106,383" RenderTransformOrigin="0.515,0.513">
+            <Image x:Name="ImagePictureBox" />
+        </Border>
+
+    </Grid>
+</Page>
